@@ -128,7 +128,10 @@ namespace HelloWorld
             float health2 = 50.0f;
             float health2Regen = 2;
 
-            Console.WriteLine("You have been selected for the Rescue Squadron! You have been asigned the color " + color +". " + "Welcome to have you along " + " ! ");
+            Console.WriteLine("You have been selected for the Rescue Squadron! You have been asigned the color " + color +". " + "Welcome to have you along " + "! ");
+            Console.WriteLine("Hopefully you have gotten your mutator. It may sound dangerous, but don't worry. This device will give you the power to save people! ");
+            Console.WriteLine("With your special power of " + color + ", " + "you will be a massive asset to the team!");
+
 
 
 
