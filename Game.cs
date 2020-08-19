@@ -28,7 +28,7 @@ namespace HelloWorld
             //Create ann application that gets the user's name along with an addititonal input.
             //Print the user's name and input to the console along eith their stats.
 
-            Console.WriteLine("Hi, low level player! State your name!");
+            Console.WriteLine("Hi there fella! State your name!");
             string protag = Console.ReadLine();
             Console.WriteLine("Well hi there " + protag + "!"  +  " Tell me your favorite weapon.");
             string weapon = Console.ReadLine();
