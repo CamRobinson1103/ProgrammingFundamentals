@@ -29,15 +29,21 @@ namespace HelloWorld
             //Print the user's name and input to the console along eith their stats.
 
             Console.WriteLine("Hi, low level player! State your name!");
-            string name2 = Console.ReadLine();
-            Console.WriteLine("Well hi there " + name2 + "!"  +  " Tell me your favorite weapon.");
+            string protag = Console.ReadLine();
+            Console.WriteLine("Well hi there " + protag + "!"  +  " Tell me your favorite weapon.");
             string weapon = Console.ReadLine();
-            Console.WriteLine("Player Name: " + name2);
+            Console.WriteLine("What is your favorite color?");
+            string color = Console.ReadLine();
+            Console.WriteLine("Player Name: " + protag);
             Console.WriteLine("Player Weapon: " + weapon);
-            int level2 = 1;
-            Console.WriteLine("Player level: " + level2);
+            Console.WriteLine("Ranger Color: " + color);
+            int lv = 1;
+            Console.WriteLine("Lv: " + lv);
             bool maxLevelReached2 = false;
             bool ready2 = true;
+            float health2 = 50.0f;
+            float health2Regen = 2;
+
 
 
 
