@@ -40,7 +40,7 @@ namespace HelloWorld
                     damage = 40;
                     role = "Wizard";
                 }
-           
+                else
                 Console.WriteLine("Invalid input. Using default stats");
             }
             Console.WriteLine("Player Name: " + name);
