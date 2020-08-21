@@ -25,20 +25,22 @@ namespace HelloWorld
             Console.WriteLine("Welcome " + name + " ! " + "Please select a class");
             Console.WriteLine("Press 1 for Knight class");
             Console.WriteLine("Press 2 for Wizard class");
-            char input = Console.ReadKey().KeyChar;
-            if (input == '1')
+            char input = ' ';
+            Console.WriteLine();
+            while(input != '1' && input != '2')
             {
-                health = 200;
-                role = "Knight";
-            }
-            else if (input == '2')
-            {
-                damage = 40;
-                role = "Wizard";
-                int MP = 100;
-            }
-            else
-            {
+                input = Console.ReadKey().KeyChar;
+                if (input == '1')
+                {
+                    health = 200;
+                    role = "Knight";
+                }
+                else if (input == '2')
+                {
+                    damage = 40;
+                    role = "Wizard";
+                }
+           
                 Console.WriteLine("Invalid input. Using default stats");
             }
             Console.WriteLine("Player Name: " + name);
