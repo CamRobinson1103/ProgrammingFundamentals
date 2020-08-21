@@ -145,16 +145,41 @@ namespace HelloWorld
 
             Console.WriteLine("You have been selected for the Rescue Squadron! You have been asigned the color " + color +". " + "Welcome to have you along " + "! ");
             Console.WriteLine("Hopefully you have gotten your mutator. It may sound dangerous, but don't worry. This device will give you the power to save people! ");
-            Console.WriteLine("With your special power of " + color + ", " + "you will be a massive asset to the team!");
+            Console.WriteLine("With your special power of " + color + ", " + "you will be a massive asset to the team! Now Let's get straight to training and see how good you are in combat!");
+            Console.WriteLine("A training dummy appeared before you. What is your first action?");
+            Console.WriteLine("[1] Punch");
+            Console.WriteLine("[2] Kick");
+            Console.WriteLine("[3] Use Weapon ");
 
+            //Making play pick action
+            while (select != '1' && select != '2' && select != '3')
+            {
+                select = Console.ReadKey().KeyChar;
+                if (select == '1')
+                {
+                    Console.WriteLine("You punched the dummy in the head");
+                }
+                else if (select == '2')
+                {
+                    Console.WriteLine("You kicked the dummy in the ribs");
+                }
 
-
-
-
-
-
-
+                else if (select == '3')
+                    Console.WriteLine("You hit the dummy with your " + weapon + " .");
             
+
+
+            }
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
