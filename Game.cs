@@ -34,14 +34,19 @@ namespace HelloWorld
                 {
                     health = 200;
                     role = "Knight";
+                    int MP = 100;
                 }
                 else if (input == '2')
                 {
                     damage = 40;
                     role = "Wizard";
+                    int MP = 200;
                 }
                 else
-                Console.WriteLine("Invalid input. Using default stats");
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+              
             }
             Console.WriteLine("Player Name: " + name);
             Console.WriteLine("Player Health: " + health);
