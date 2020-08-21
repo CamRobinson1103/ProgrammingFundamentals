@@ -15,7 +15,9 @@ namespace HelloWorld
             int damage = 20;
             int level = 1;
             bool ready = true;
+            int MP = 100;
             string role = "none";
+            
 
             //This is the welcome message
             Console.WriteLine("Hello, peasant. What dou art nameth?");
@@ -34,13 +36,12 @@ namespace HelloWorld
                 {
                     health = 200;
                     role = "Knight";
-                    int MP = 100;
                 }
                 else if (input == '2')
                 {
                     damage = 40;
                     role = "Wizard";
-                    int MP = 200;
+                    MP = 200;
                 }
                 else
                 {
@@ -48,12 +49,14 @@ namespace HelloWorld
                 }
               
             }
+
+
+            //This is the Character Display
             Console.WriteLine("Player Name: " + name);
             Console.WriteLine("Player Health: " + health);
             Console.WriteLine("Player level: " + level);
             Console.WriteLine("Player Role: " + role);
-            Console.WriteLine("Player MP: 100");
-            Console.WriteLine(health);
+            Console.Write("MP: " + MP );
 
 
 
@@ -61,7 +64,7 @@ namespace HelloWorld
             //Create ann application that gets the user's name along with an addititonal input.
             //Print the user's name and input to the console along With their stats.
             string color = "none";
-            Console.WriteLine("Hi there fella! State your name!");
+            Console.WriteLine( "Hi there fella! State your name!");
             string protag = Console.ReadLine();
             Console.WriteLine("Well hi there " + protag + "!"  +  " Tell me your favorite weapon.");
             string weapon = Console.ReadLine();
@@ -78,9 +81,14 @@ namespace HelloWorld
             Console.WriteLine("Press 3 for Green");
             Console.WriteLine("Press 4 for Yellow");
             Console.WriteLine("Press 5 for Pink");
-            char select = Console.ReadKey().KeyChar;
+            char select = ' ';
+            Console.WriteLine();
+            while (select != '1' && select != '2' && select != '3' && select != '4' && select != '5')
+            {
+                select = Console.ReadKey().KeyChar;
+            }
 
-            if (select == '1')
+                if (select == '1')
             {
                 hit = 20;
                 def = 10;
