@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HelloWorld
 {
-    class Game
+    class game
     { 
         public void Run()
         {//This variable is used to store health
