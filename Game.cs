@@ -4,59 +4,139 @@ using System.Text;
 
 namespace HelloWorld
 {
-    class Game
+    class game
     { 
         public void Run()
-        {//This variable is used to store health
-            float health = 100.0f;
-            //This value is used to heal player
-            float healthRegen = 20;
-            bool maxLevelReached = false;
-            int damage = 20;
-            int level = 1;
-            bool ready = true;
-            int MP = 100;
-            string role = "none";
-            
-
-            //This is the welcome message
-            Console.WriteLine("Hello, peasant. What dou art nameth?");
-            string name = Console.ReadLine();
-
-            //This is the class selection
-            Console.WriteLine("Welcome " + name + " ! " + "Please select a class");
-            Console.WriteLine("Press 1 for Knight class");
-            Console.WriteLine("Press 2 for Wizard class");
-            char input = ' ';
-            Console.WriteLine();
-            while(input != '1' && input != '2')
+        {
+            bool gameOver = false;
+            while(gameOver == false)
             {
+                //This variable is used to store health
+                float playerHealth = 100.0f;
+                //This value is used to heal player
+                float healthRegen = 20;
+                bool maxLevelReached = false;
+                int damage = 20;
+                int defence = 40;
+                int level = 1;
+                bool ready = true;
+                int MP = 100;
+                string role = "loser";
+
+
+                //This is the welcome message
+                Console.WriteLine("Hello, peasant. What dou art nameth?");
+                string name = Console.ReadLine();
+
+                //This is the class selection
+                Console.WriteLine("Welcome " + name + " ! " + "Please select a class");
+                Console.WriteLine("Press 1 for Knight class");
+                Console.WriteLine("Press 2 for Wizard class");
+                char input = ' ';
+                Console.WriteLine();
+                while (input != '1' && input != '2')
+                {
+                    input = Console.ReadKey().KeyChar;
+                    if (input == '1')
+                    {
+                        playerHealth = 200;
+                        role = "Knight";
+                    }
+                    else if (input == '2')
+                    {
+                        damage = 40;
+                        role = "Wizard";
+                        MP = 200;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Input");
+                    }
+
+                }
+
+
+                //This is the Character Display
+                Console.Clear();
+
+
+
+
+                //First decision
+                Console.WriteLine("You have been approached by a LOSER.");
+                Console.WriteLine("They have offered you 'candy.' ");
+                Console.WriteLine("Dou you accept?");
+                Console.WriteLine("Press 1 for yes");
+                Console.WriteLine("Press 2 for no");
                 input = Console.ReadKey().KeyChar;
                 if (input == '1')
                 {
-                    health = 200;
-                    role = "Knight";
+                    playerHealth = 0;
+                    damage = 500;
+                    Console.WriteLine("You took the candy and dies. You lose!!");
+                    gameOver = true;
+                    break;
                 }
                 else if (input == '2')
                 {
-                    damage = 40;
-                    role = "Wizard";
-                    MP = 200;
+                    Console.WriteLine("You didn't take the candy because you're not a LOSER! however, now he wants to kill you!");
+                    int loserHealth = 60;
+                    int loserDamage = 25;
+                    while (playerHealth > 0 && loserHealth > 0) ;
+                    {
+                        Console.WriteLine("Player Name: " + name);
+                        Console.WriteLine("Player Health: " + playerHealth);
+                        Console.WriteLine("Player level: " + level);
+                        Console.WriteLine("Player Role: " + role);
+                        //Enemy Stats
+                        Console.WriteLine("\nLoser");
+                        Console.WriteLine("Loser Health " + loserHealth);
+                        Console.WriteLine("Loser Damage " + loserDamage);
+                        Console.WriteLine("Loser Role: Candy Dandy");
+                        Console.Write("MP: " + MP);
+                        //Commands
+                        Console.WriteLine("[1] Attack");
+                        Console.WriteLine("[2] Defend");
+                        input = Console.ReadKey().KeyChar;
+                        if(input == '1')
+                        {
+                            loserHealth -= damage;
+                            Console.WriteLine("You slap their face with your gauntlet!");
+                        }
+                        else if(input == '2')
+                        {
+                            defence -= loserDamage;
+                            Console.WriteLine("You raised your guard. Your shield took " + loserDamage + " damage");
+                            Console.ReadKey();
+                            continue;
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Input");
+                    Console.WriteLine("You continue your journry onward......somewhere.");
                 }
-              
+
             }
-
-
-            //This is the Character Display
-            Console.WriteLine("Player Name: " + name);
-            Console.WriteLine("Player Health: " + health);
-            Console.WriteLine("Player level: " + level);
-            Console.WriteLine("Player Role: " + role);
-            Console.Write("MP: " + MP );
+            //for loop example
+            Console.WriteLine("You approached a door. On it is a riddle. It says: How much wood could a woodchuck chuck if a woodchuck could chuck wood?");
+            string guess = " ";
+            for(int i = 0; i< 5; i++)
+            {
+                Console.WriteLine("You have " + (5 - i) + " tries remaining");
+                guess = Console.ReadLine();
+                if(guess == "Yes")
+                {
+                    Console.WriteLine("You have answered correctly! The door slowly opens.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("You hear a loud buzzing noise. You figure it must mean you said the wrong answer.");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
 
 
 
@@ -170,6 +250,11 @@ namespace HelloWorld
 
 
             }
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i);
+            }
+
 
 
 
