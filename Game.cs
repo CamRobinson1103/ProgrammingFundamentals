@@ -6,8 +6,30 @@ namespace HelloWorld
 {
     class game
     {
+        //Making Changes
+        string CombineWords(string word1, string word2)
+        {
+            string result = word1 + word2;
+            return result;
+        }
+        int SumTwoNumbers(int num1, int num2)
+        {
+            int result = num1 + num2;
+            return result;
+        }
+        void PrintStats(string name, float playerHealth, int damage, int level, string role)
+        {
+
+            Console.WriteLine("Player Name: " + name);
+            Console.WriteLine("Player Health: " + playerHealth);
+            Console.WriteLine("Player level: " + level);
+            Console.WriteLine("Player Role: " + role);
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+        }
         public void Run()
         {
+            string newWord = CombineWords("Peanut", "butter");
             bool gameOver = false;
             while (gameOver == false)
             {
@@ -37,12 +59,12 @@ namespace HelloWorld
                 while (input != '1' && input != '2')
                 {
                     input = Console.ReadKey().KeyChar;
-                    if (input == '1')
+                    if (input == '2')
                     {
                         playerHealth = 200;
                         role = "Knight";
                     }
-                    else if (input == '2')
+                    else if (input == '1')
                     {
                         damage = 40;
                         role = "Wizard";
@@ -74,7 +96,7 @@ namespace HelloWorld
                     playerHealth = 0;
                     Console.WriteLine("You took the candy and die. You lose!!");
                     gameOver = true;
-                    continue;
+                    break;
                 }
                 else if (input == '2')
                 {
@@ -84,10 +106,7 @@ namespace HelloWorld
                     int loserDamage = 25;
                     while (playerHealth > 0 && loserHealth > 0) ;
                     {
-                        Console.WriteLine("Player Name: " + name);
-                        Console.WriteLine("Player Health: " + playerHealth);
-                        Console.WriteLine("Player level: " + level);
-                        Console.WriteLine("Player Role: " + role);
+
                         //Enemy Stats
                         Console.WriteLine("\nLoser");
                         Console.WriteLine("Loser Health " + loserHealth);
@@ -143,7 +162,7 @@ namespace HelloWorld
             //Create ann application that gets the user's name along with an addititonal input.
             //Print the user's name and input to the console along With their stats.
             string color = "none";
-            Console.WriteLine("Hello, and welcome to our organization. State your name");
+            Console.WriteLine("Hello, and welcome to our organization. State your name.");
             string protag = Console.ReadLine();
             Console.WriteLine("Hello " + protag + "." + " Tell me your favorite weapon.");
             string weapon = Console.ReadLine();
@@ -223,9 +242,9 @@ namespace HelloWorld
             float health2Regen = 2;
 
             Console.WriteLine("You have been selected for the Rescue Squadron! You have been asigned the color " + color + ". " + "Welcome to have you along " + "! ");
-            Console.Clear();
             Console.WriteLine("Hopefully you have gotten your mutator. It may sound dangerous, but don't worry. This device will give you the power to save people! ");
             Console.WriteLine("With your special power of " + color + ", " + "you will be a massive asset to the team! Now Let's get straight to training and see how good you are in combat!");
+            Console.Clear();
             Console.WriteLine("A training dummy appeared before you. What is your first action?");
             int dummyHealth = 6;
             int dummyDamage = 2;
